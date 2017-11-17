@@ -31,9 +31,7 @@ namespace Sort
             {
                 tree.get_array(n);
             }
-            tree.sort();
-
-            
+            tree.sort();            
         }
     }
 }
