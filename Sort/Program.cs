@@ -12,19 +12,19 @@ namespace Sort
         static void Main(string[] args)
         {
             build_array();
-            send_array();
+            tree_sort();
         }
         public static void build_array()
         {
-                        
+                      
             Random random = new Random();
             for(int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = random.Next(1, 100);
                 
-            }            
+            }           
         }
-        public static void send_array()
+        public static void tree_sort()
         {
             Binary_tree_sort tree = new Binary_tree_sort();
             foreach (int n in numbers)
@@ -32,7 +32,8 @@ namespace Sort
                 tree.get_array(n);
             }
             tree.sort();
-        }
 
+            
+        }
     }
 }
