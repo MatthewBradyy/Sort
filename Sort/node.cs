@@ -8,6 +8,7 @@ namespace Sort
 {
     class node
     {
+        public List<int> numbers = new List<int>();
         public int node_value;
         public node rightleaf;
         public node leftleaf;
@@ -15,5 +16,6 @@ namespace Sort
         {
             node_value = value;
         }
+        
     }
 }

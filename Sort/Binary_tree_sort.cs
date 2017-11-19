@@ -8,9 +8,7 @@ namespace Sort
 {
     class Binary_tree_sort
     {
-        public int[] numbers = new int[10];
-        public int counter = 0;
-        public List<node> tree = new List<node>();
+        public List<int> numbers = new List<int>();       
         private static node root;
         private node focus;
         private node parent;
@@ -18,20 +16,19 @@ namespace Sort
         {
             root = null;
         }
-        public void get_array(int num)
+        public int[] get_array(int[] list)
         {
-            numbers[counter] = num;
-            counter++;
-
+            sort(list);
+            return numbers.ToArray();
         }
-        public void sort()
+        public void sort(int[] list)
         {
-            foreach (int n in numbers)
+            foreach (int n in list)
             {
                 add(n);
             }
-            display(root);
-            Console.ReadLine();
+            buildlist(root);
+
         }
         public void add(int value)
         {
@@ -42,7 +39,7 @@ namespace Sort
             if (root == null)
             {
                 root = newnode;
-                tree.Add(root);
+                
                 return;
             }
             else
@@ -58,8 +55,7 @@ namespace Sort
                         if (focus == null)
                         {
                             parent.leftleaf = newnode;
-                            added = true;
-                            tree.Add(parent.leftleaf);
+                            added = true;                        
                         }
                     }
                     else
@@ -68,8 +64,7 @@ namespace Sort
                         if (focus == null)
                         {
                             parent.rightleaf = newnode;
-                            added = true;
-                            tree.Add(parent.rightleaf);
+                            added = true;                          
                         }
 
                     }
@@ -79,15 +74,15 @@ namespace Sort
 
             }
         }
-        public void display(node N)
+        public void buildlist(node N)
         {
             if (N == null)
             {
                 return;
             }
-            display(N.leftleaf);
-            Console.WriteLine(N.node_value);
-            display(N.rightleaf);
+            buildlist(N.leftleaf);
+            numbers.Add(N.node_value);
+            buildlist(N.rightleaf);
         }
     }
 }

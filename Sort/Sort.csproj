@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binary_tree_sort.cs" />
+    <Compile Include="Bubble_Sorter.cs" />
+    <Compile Include="MergeSorter.cs" />
     <Compile Include="node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
